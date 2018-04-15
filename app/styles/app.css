@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100, 300, 400');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
+
+.title h1 {
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 35px;
+}
+
+.table-block {
+    border: 2px dotted #b9b9b9;
+    border-radius: 8px;
+}
+
+.table-block .name a {
+    color: #8c8c8c;
+    font-weight: 400;
+}
+
+.btn {
+    font-size: 13px;
+    padding: 5px 20px;
+    border-radius: 0;
+}
+
+.btn-success, .btn-danger {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-weight: 100;
+}
+
+.btn.add {
+    font-weight: 300;
+    letter-spacing: 1px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.product-table .table-header div {
+    border-right: 2px dotted #b9b9b9;
+    border-top: 2px dotted #b9b9b9;
+    border-bottom: 2px dotted #b9b9b9;
+}
+
+.product-table .table-header div:first-child {
+    border-left: 2px dotted #b9b9b9;
+    border-top-left-radius: 8px;
+}
+
+.product-table .table-header div:nth-child(3) {
+    border-top-right-radius: 8px;
+}
+
+.product-table .table-body .col-12 .row div {
+    border-right: 2px dotted #b9b9b9;
+}
+
+.product-table .table-body .col-12 .row div:first-child {
+    border-left: 2px dotted #b9b9b9;
+}
+
+.product-table .table-body .col-12 .row div:last-child {
+    border-right: none;
+}
+
+.product-table .table-body .col-12:last-child .row div:last-child {
+    border-bottom: none !important;
+}
+
+.product-table .table-footer .col-12 span:first-child {
+    font-size: 14px;
+    font-weight: 100;
+    display: block;
+}
+
+.product-table .table-footer .col-12 span:last-child {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.product-table .table-footer .col-12 .row div {
+    border-right: 2px dotted #b9b9b9;
+    border-bottom: 2px dotted #b9b9b9;
+    padding: 12px;
+}
+
+.product-table .table-footer .col-12 .row div:first-child {
+    border-left: 2px dotted #b9b9b9;
+    border-bottom-left-radius: 8px;
+}
+
+.product-table .table-footer .col-12 .row div:nth-child(3) {
+    border-bottom-right-radius: 8px;
+}
+
+.product-table .table-footer .col-12 .row div:last-child {
+    border-right: none;
+    border-bottom: none;
+}
+
+.product-table .table-footer .dot span {
+    opacity: 0;
+}

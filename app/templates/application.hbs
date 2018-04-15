@@ -1,5 +1,21 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<div class="container">
+    <div class="page-header mt-4 mb-5">
+        {{#link-to "index"}}
+            <h5>
 
-{{outlet}}
+            </h5>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <span class="mr-2"><i class="fas fa-home"></i></span>
+                        <span>Shops</span>
+                    </li>
+                </ol>
+            </nav>
+        {{/link-to}}
+    </div>
+    <div class="col-sm-12 d-flex justify-content-center">
+        {{outlet}}
+    </div>
+</div>
+

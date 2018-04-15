@@ -1,0 +1,88 @@
+<div class="col-11">
+    <div class="title text-center col-12 text-uppercase">
+        <h1>{{model.name}} / Products</h1>
+    </div>
+    <div class="col-12">
+        {{#unless canCreateProduct}}
+            <div class="row mb-4">
+                <div class="col-12 p-0">
+                    <p>
+                        There is no product in <strong>"{{model.name}}"</strong> yet.
+                    </p>
+                </div>
+            </div>
+        {{/unless}}
+        {{#if canCreateProduct}}
+            <div class="row mb-4 no-gutters product-table">
+                <div class="col-12">
+                    <div class="row table-header d-flex align-items-center">
+                        <div class="p-4 text-uppercase col-5 text-center">Name</div>
+                        <div class="p-4 text-uppercase col-2 text-center">QTY</div>
+                        <div class="p-4 text-uppercase col-3 text-center">Price</div>
+                        <div class="p-4 border-0 col-2"></div>
+                    </div>
+                    <div class="row table-body no-gutters">
+                        {{#each model.products as |product|}}
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-5 d-flex align-items-center border-bottom">
+                                        {{product.name}}
+                                    </div>
+                                    <div class="col-2 d-flex align-items-center
+                                            border-bottom text-center justify-content-center">
+                                        {{product.quantity}}
+                                    </div>
+                                    <div class="col-3 d-flex justify-content-center align-items-center
+                                            border-bottom text-center">
+                                        <span class="mr-1">$</span>{{product.price}}
+                                    </div>
+                                    <div
+                                        class="btn-group d-flex align-items-center col-2 pr-0 d-flex justify-content-center">
+                                        {{#link-to "shops.shop.products.edit" product.id
+                                                   type="button"
+                                                   class="btn btn-success mr-2"}}
+                                            <i class="fas fa-pencil-alt"></i>
+                                        {{/link-to}}
+                                        <button {{action "deleteProduct" product.id}} class="btn btn-danger">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                    <div class="row table-footer">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-5 dot">
+                                    <span>.</span>
+                                </div>
+                                <div class="col-2 dot">
+                                    <span>.</span>
+                                </div>
+                                <div class="col-3 text-right">
+                                    <span>Total Price</span>
+                                    <span>$ {{totalPrice}}</span>
+                                </div>
+                                <div class="col-2 dot">
+                                    <span>.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/if}}
+
+        <div class="row pt-2 pb-2">
+            <div class="col-3 pl-0">
+                {{#link-to "shops.shop.products.new"}}
+                    <button {{action "productCreationStart"}} class="w-100 rounded-0 btn btn-dark add">
+                        Add Product
+                    </button>
+                {{/link-to}}
+            </div>
+        </div>
+    </div>
+</div>
+{{outlet}}

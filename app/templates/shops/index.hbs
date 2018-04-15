@@ -1,0 +1,49 @@
+<div class="col-11 shops">
+    <div class="title text-center col-12 text-uppercase">
+        <h1>Shops</h1>
+    </div>
+    <div class="col-12">
+        {{#unless canCreateShop}}
+            <div class="row mb-4">
+                <div class="col-12">
+                    <p>
+                        There is no shop yet.
+                    </p>
+                </div>
+            </div>
+        {{/unless}}
+        {{#if canCreateShop}}
+            <div class="row mb-4 pt-4 pb-5 pr-4 pl-5 no-gutters table-block">
+                {{#each model as |shop|}}
+                    <div class="col-12 d-flex align-items-center border-bottom">
+                        <div class="name col-6 pl-0">
+                            {{#link-to "shops.shop.products" shop}}
+                                {{shop.name}}
+                            {{/link-to}}
+                        </div>
+                        <div class="btn-group col-6 pr-0 d-flex justify-content-end">
+                            {{#link-to "shops.edit" shop.id
+                                       type="button" class="rounded-0 btn btn-success edit mr-2 text-uppercase"}}
+                                Edit
+                            {{/link-to}}
+                            <button {{action "deleteShop" shop.id}}
+                                class="rounded-0 btn btn-danger text-uppercase delete">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        {{/if}}
+        <div class="row pt-2 pb-2 no-gutters">
+            <div class="col-3">
+                {{#link-to "shops.new"}}
+                    <button class="w-100 rounded-0 btn btn-dark add" {{action "shopCreationStart"}}>
+                        Add Shops
+                    </button>
+                {{/link-to}}
+            </div>
+        </div>
+    </div>
+</div>
+{{outlet}}
